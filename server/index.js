@@ -3,6 +3,7 @@ import { createServer } from 'node:http';
 import { Server } from 'socket.io';
 
 /*** LES SEGUENTS LINIES SON IMPORTANTS PER PODER TENIR RUTES DE CLIENT */
+/* Hay que vigilar que el directorio ../dist sea el correcto */
 import history from 'connect-history-api-fallback'
 const app = express();
 const staticFileMiddleware = express.static('../dist');
@@ -29,6 +30,7 @@ io.on('connection', (socket) => {
   });
 });
 
+/* Aqui esogemos el puerto en el que queremos que nos escuche el servdor*/
 server.listen(3001, () => {
   console.log('Server running at http://localhost:3001');
 });
